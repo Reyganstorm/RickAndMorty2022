@@ -39,7 +39,6 @@ class CharacterManager {
                 completion(.failure(.decodingError))
                 print(error.localizedDescription)
             }
-
         } .resume()
 
     }
@@ -51,7 +50,6 @@ class ImageManager {
     private init() {}
     
     func fetchImage(from url: URL, with completion: @escaping(Data, URLResponse) -> Void) {
-        // guard let url = URL(string: url) else {return}
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, let response = response else {
                 print(error?.localizedDescription ?? "no descroption of error")

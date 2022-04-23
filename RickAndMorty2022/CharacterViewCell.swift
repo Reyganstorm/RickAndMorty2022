@@ -11,7 +11,7 @@ class CharacterViewCell: UITableViewCell {
 
     // MARK: IBOutlets
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var characterImage: UIImageView! {
+    @IBOutlet weak var characterImage: CharacterImageView! {
         didSet {
             //characterImage.contentMode = .scaleAspectFit
             characterImage.layer.cornerRadius = characterImage.bounds.height/2
@@ -26,14 +26,6 @@ class CharacterViewCell: UITableViewCell {
         G: \(character?.gender ?? "")
         """
         
-        fetchImage(from: character?.image ?? "")
-    }
-    
-    private func fetchImage(from url: String) {
-        guard let url = URL(string: url) else {return}
-        
-        ImageManager.shared.fetchImage(from: url) { data, response in
-            self.characterImage.image = UIImage(data: data)
-        }
+        characterImage.fetchImage(from: character?.image ?? "")
     }
 }
