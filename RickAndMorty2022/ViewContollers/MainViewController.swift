@@ -8,6 +8,10 @@
 import UIKit
 
 class MainViewController: UITableViewController {
+    
+    // MARK: - Private propoties
+    private var rickAndMorty: RickAndMorty?
+    private var characters: [Character] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,4 +42,7 @@ class MainViewController: UITableViewController {
     }
     */
 
+    private func fetchData(from url: String?) {
+        
+    }
 }
