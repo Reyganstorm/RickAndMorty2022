@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+enum Links: String {
+    case rickAndMortyApi = "https://rickandmortyapi.com/api/character"
+}
+
