@@ -8,23 +8,48 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Rick and Morty-->
         <scene sceneID="pJo-Se-nod">
             <objects>
                 <tableViewController id="pjv-bd-ViW" customClass="MainViewController" customModule="RickAndMorty2022" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="9If-d2-LTN">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="9If-d2-LTN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="eSy-eV-Dgd">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="eSy-eV-Dgd" customClass="CharacterViewCell" customModule="RickAndMorty2022" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="32" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eSy-eV-Dgd" id="8Gr-zM-LzZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A0A-8N-Hsc">
+                                            <rect key="frame" x="314" y="0.0" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="BEH-sa-7CW"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7H-eA-yPI">
+                                            <rect key="frame" x="35" y="16" width="264" height="68"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="v7H-eA-yPI" secondAttribute="bottom" constant="5" id="1Qh-bJ-xf2"/>
+                                        <constraint firstItem="v7H-eA-yPI" firstAttribute="leading" secondItem="8Gr-zM-LzZ" secondAttribute="leadingMargin" constant="15" id="9cG-HI-nTk"/>
+                                        <constraint firstItem="A0A-8N-Hsc" firstAttribute="leading" secondItem="v7H-eA-yPI" secondAttribute="trailing" constant="15" id="QON-zg-Ya1"/>
+                                        <constraint firstAttribute="bottom" secondItem="A0A-8N-Hsc" secondAttribute="bottom" id="d3U-1Z-dFV"/>
+                                        <constraint firstItem="v7H-eA-yPI" firstAttribute="top" secondItem="8Gr-zM-LzZ" secondAttribute="topMargin" constant="5" id="geC-yq-k5d"/>
+                                        <constraint firstItem="A0A-8N-Hsc" firstAttribute="top" secondItem="8Gr-zM-LzZ" secondAttribute="top" id="q9a-fS-nNe"/>
+                                        <constraint firstAttribute="trailing" secondItem="A0A-8N-Hsc" secondAttribute="trailing" id="rFS-F1-PFt"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="characterImage" destination="A0A-8N-Hsc" id="U9m-4O-Kai"/>
+                                    <outlet property="descriptionLabel" destination="v7H-eA-yPI" id="5nI-hF-eSd"/>
                                     <segue destination="6rW-AA-FIF" kind="show" id="Alb-MU-yED"/>
                                 </connections>
                             </tableViewCell>
@@ -34,7 +59,7 @@
                             <outlet property="delegate" destination="pjv-bd-ViW" id="l1f-Iw-oz7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="usa-CW-A1k">
+                    <navigationItem key="navigationItem" title="Rick and Morty" id="usa-CW-A1k">
                         <barButtonItem key="leftBarButtonItem" title="Prev" id="aF1-Xq-0gi">
                             <connections>
                                 <action selector="updateData:" destination="pjv-bd-ViW" id="VQt-jK-wps"/>
@@ -49,7 +74,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcG-al-bfj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="297" y="30"/>
+            <point key="canvasLocation" x="295.6521739130435" y="29.464285714285712"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ld0-Po-eXA">
@@ -71,8 +96,8 @@
         <scene sceneID="59m-hE-4uH">
             <objects>
                 <navigationController id="Xka-lq-rjN" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cm5-HF-njD">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="cm5-HF-njD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E82F2BEE28141387002EFB3C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82F2BED28141387002EFB3C /* MainViewController.swift */; };
 		E82F2BF0281413D0002EFB3C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82F2BEF281413D0002EFB3C /* NetworkManager.swift */; };
+		E82F2BF228142865002EFB3C /* CharacterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82F2BF128142865002EFB3C /* CharacterViewCell.swift */; };
 		E8F300E428140B1800E09118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F300E328140B1800E09118 /* AppDelegate.swift */; };
 		E8F300E628140B1800E09118 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F300E528140B1800E09118 /* SceneDelegate.swift */; };
 		E8F300EB28140B1800E09118 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8F300E928140B1800E09118 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		E82F2BED28141387002EFB3C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E82F2BEF281413D0002EFB3C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E82F2BF128142865002EFB3C /* CharacterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewCell.swift; sourceTree = "<group>"; };
 		E8F300E028140B1800E09118 /* RickAndMorty2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty2022.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F300E328140B1800E09118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8F300E528140B1800E09118 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		E8F300F928140B4F00E09118 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E82F2BF128142865002EFB3C /* CharacterViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E82F2BF228142865002EFB3C /* CharacterViewCell.swift in Sources */,
 				E8F300FC28140FB900E09118 /* RickAndMorty.swift in Sources */,
 				E8F300E428140B1800E09118 /* AppDelegate.swift in Sources */,
 				E82F2BF0281413D0002EFB3C /* NetworkManager.swift in Sources */,

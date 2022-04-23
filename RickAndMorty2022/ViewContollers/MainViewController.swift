@@ -26,15 +26,17 @@ class MainViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CharacterViewCell
 
         let character = rickAndMorty?.results[indexPath.row]
         
-        var content = cell.defaultContentConfiguration()
-        content.text = character?.name
+        cell.configure(with: character)
         
-        
-        cell.contentConfiguration = content
+//        var content = cell.defaultContentConfiguration()
+//        content.text = character?.name
+//
+//
+//        cell.contentConfiguration = content
         return cell
     }
 
