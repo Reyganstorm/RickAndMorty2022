@@ -11,7 +11,12 @@ class CharacterViewCell: UITableViewCell {
 
     // MARK: IBOutlets
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var characterImage: UIImageView!
+    @IBOutlet weak var characterImage: UIImageView! {
+        didSet {
+            //characterImage.contentMode = .scaleAspectFit
+            characterImage.layer.cornerRadius = characterImage.bounds.height/2
+        }
+    }
     
     func configure(with character: Character?) {
         self.descriptionLabel.text =
@@ -20,6 +25,15 @@ class CharacterViewCell: UITableViewCell {
         S: \(character?.species ?? "")
         G: \(character?.gender ?? "")
         """
+        
+        fetchImage(from: character?.image ?? "")
     }
     
+    private func fetchImage(from url: String) {
+        guard let url = URL(string: url) else {return}
+        
+        ImageManager.shared.fetchImage(from: url) { data, response in
+            self.characterImage.image = UIImage(data: data)
+        }
+    }
 }

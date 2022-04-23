@@ -57,7 +57,7 @@ class MainViewController: UITableViewController {
     }
 
     private func fetchData(from url: String?) {
-        NetworkManager.shared.fetchData(from: url) { result in
+        CharacterManager.shared.fetchData(from: url) { result in
             switch result {
             case .success(let rickAndMorty):
                 self.rickAndMorty = rickAndMorty
