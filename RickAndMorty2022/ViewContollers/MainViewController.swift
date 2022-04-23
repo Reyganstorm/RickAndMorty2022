@@ -15,20 +15,26 @@ class MainViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchData(from: Links.rickAndMortyApi.rawValue)
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        rickAndMorty?.results.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        // Configure the cell...
-
+        let character = rickAndMorty?.results[indexPath.row]
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = character?.name
+        
+        
+        cell.contentConfiguration = content
         return cell
     }
 
@@ -41,8 +47,22 @@ class MainViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func updateData(_ sender: UIBarButtonItem) {
+        sender.tag == 1
+            ? fetchData(from: rickAndMorty?.info.next)
+            : fetchData(from: rickAndMorty?.info.prev)
+    }
 
     private func fetchData(from url: String?) {
-        
+        NetworkManager.shared.fetchData(from: url) { result in
+            switch result {
+            case .success(let rickAndMorty):
+                self.rickAndMorty = rickAndMorty
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }

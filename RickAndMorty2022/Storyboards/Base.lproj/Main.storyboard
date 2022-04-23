@@ -35,8 +35,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="usa-CW-A1k">
-                        <barButtonItem key="leftBarButtonItem" title="Prev" id="aF1-Xq-0gi"/>
-                        <barButtonItem key="rightBarButtonItem" tag="1" title="Next" id="TRS-cI-eDm"/>
+                        <barButtonItem key="leftBarButtonItem" title="Prev" id="aF1-Xq-0gi">
+                            <connections>
+                                <action selector="updateData:" destination="pjv-bd-ViW" id="VQt-jK-wps"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" tag="1" title="Next" id="TRS-cI-eDm">
+                            <connections>
+                                <action selector="updateData:" destination="pjv-bd-ViW" id="8f3-nL-WVl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcG-al-bfj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
