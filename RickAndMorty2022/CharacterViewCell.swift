@@ -10,6 +10,7 @@ import UIKit
 class CharacterViewCell: UITableViewCell {
 
     // MARK: IBOutlets
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var characterImage: CharacterImageView! {
         didSet {
@@ -18,11 +19,11 @@ class CharacterViewCell: UITableViewCell {
     }
     
     func configure(with character: Character?) {
+        self.nameLabel.text = character?.name ?? ""
         self.descriptionLabel.text =
         """
-        N: \(character?.name ?? "")
-        S: \(character?.species ?? "")
-        G: \(character?.gender ?? "")
+        \(character?.species ?? "")
+        \(character?.gender ?? "")
         """
         
         characterImage.fetchImage(from: character?.image ?? "")
