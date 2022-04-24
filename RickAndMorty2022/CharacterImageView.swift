@@ -40,3 +40,4 @@ class CharacterImageView: UIImageView {
         return nil
     }
 }
+    

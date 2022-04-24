@@ -13,7 +13,6 @@ class CharacterViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var characterImage: CharacterImageView! {
         didSet {
-            //characterImage.contentMode = .scaleAspectFit
             characterImage.layer.cornerRadius = characterImage.bounds.height/2
         }
     }

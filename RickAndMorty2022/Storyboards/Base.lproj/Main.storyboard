@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xka-lq-rjN">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,25 +13,25 @@
             <objects>
                 <tableViewController id="pjv-bd-ViW" customClass="MainViewController" customModule="RickAndMorty2022" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="9If-d2-LTN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="eSy-eV-Dgd" customClass="CharacterViewCell" customModule="RickAndMorty2022" customModuleProvider="target">
-                                <rect key="frame" x="20" y="32" width="374" height="100"/>
+                                <rect key="frame" x="20" y="31.666666030883789" width="350" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eSy-eV-Dgd" id="8Gr-zM-LzZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="350" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A0A-8N-Hsc" customClass="CharacterImageView" customModule="RickAndMorty2022" customModuleProvider="target">
-                                            <rect key="frame" x="284" y="10" width="80" height="80"/>
+                                            <rect key="frame" x="260" y="10" width="80" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="BEH-sa-7CW"/>
                                                 <constraint firstAttribute="height" constant="80" id="w8E-FA-gN9"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7H-eA-yPI">
-                                            <rect key="frame" x="35" y="16" width="234" height="68"/>
+                                            <rect key="frame" x="35" y="16" width="210" height="68"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                                 <connections>
                                     <outlet property="characterImage" destination="A0A-8N-Hsc" id="U9m-4O-Kai"/>
                                     <outlet property="descriptionLabel" destination="v7H-eA-yPI" id="5nI-hF-eSd"/>
-                                    <segue destination="6rW-AA-FIF" kind="show" id="Alb-MU-yED"/>
+                                    <segue destination="kFV-22-39H" kind="show" id="4mO-Pm-YL3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -59,44 +59,83 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Rick and Morty" id="usa-CW-A1k">
-                        <barButtonItem key="leftBarButtonItem" title="Prev" id="aF1-Xq-0gi">
+                        <barButtonItem key="leftBarButtonItem" image="arrow.backward" catalog="system" id="aF1-Xq-0gi">
                             <connections>
                                 <action selector="updateData:" destination="pjv-bd-ViW" id="VQt-jK-wps"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" tag="1" title="Next" id="TRS-cI-eDm">
+                        <barButtonItem key="rightBarButtonItem" tag="1" title="Next" image="arrow.forward" catalog="system" id="TRS-cI-eDm">
                             <connections>
                                 <action selector="updateData:" destination="pjv-bd-ViW" id="8f3-nL-WVl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="backwardArrow" destination="aF1-Xq-0gi" id="wvu-ME-vXX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcG-al-bfj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="295.6521739130435" y="29.464285714285712"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="ld0-Po-eXA">
+        <!--Detail View Controller-->
+        <scene sceneID="pjO-MN-tXt">
             <objects>
-                <viewController id="6rW-AA-FIF" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="STS-nd-Czz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController id="kFV-22-39H" customClass="DetailViewController" customModule="RickAndMorty2022" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0AO-Iz-Ue9">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="xcB-Oe-WIm"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rW-1w-Iul">
+                                <rect key="frame" x="40" y="88" width="310" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSM-1y-fFS">
+                                <rect key="frame" x="40" y="370" width="330" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OcW-jG-Uvf" customClass="CharacterImageView" customModule="RickAndMorty2022" customModuleProvider="target">
+                                <rect key="frame" x="95" y="140" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="8jc-qb-TRS"/>
+                                    <constraint firstAttribute="width" constant="200" id="bwk-0X-x9I"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jf6-lh-ltP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Jf6-lh-ltP" firstAttribute="trailing" secondItem="YSM-1y-fFS" secondAttribute="trailing" constant="20" id="0Nk-A9-o0O"/>
+                            <constraint firstItem="OcW-jG-Uvf" firstAttribute="centerX" secondItem="0AO-Iz-Ue9" secondAttribute="centerX" id="5ks-6M-p8e"/>
+                            <constraint firstItem="YSM-1y-fFS" firstAttribute="top" secondItem="OcW-jG-Uvf" secondAttribute="bottom" constant="30" id="A2B-Ee-pAj"/>
+                            <constraint firstItem="OcW-jG-Uvf" firstAttribute="top" secondItem="1rW-1w-Iul" secondAttribute="bottom" constant="15" id="CgI-gu-dZv"/>
+                            <constraint firstItem="YSM-1y-fFS" firstAttribute="leading" secondItem="Jf6-lh-ltP" secondAttribute="leading" constant="40" id="Rrv-jZ-l46"/>
+                            <constraint firstItem="1rW-1w-Iul" firstAttribute="top" secondItem="Jf6-lh-ltP" secondAttribute="top" id="VqE-ow-ZRF"/>
+                            <constraint firstItem="1rW-1w-Iul" firstAttribute="leading" secondItem="Jf6-lh-ltP" secondAttribute="leading" constant="40" id="crJ-Rn-IbF"/>
+                            <constraint firstItem="Jf6-lh-ltP" firstAttribute="trailing" secondItem="1rW-1w-Iul" secondAttribute="trailing" constant="40" id="sDN-K2-7Mb"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qNE-9h-ku6"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="40C-XP-p7a"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="YSM-1y-fFS" id="Afa-yC-lT5"/>
+                        <outlet property="imageView" destination="OcW-jG-Uvf" id="2v1-RG-jce"/>
+                        <outlet property="nameLabel" destination="1rW-1w-Iul" id="nXa-ib-Wl3"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6tK-fr-mNh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cLl-u9-cVB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1265" y="29"/>
+            <point key="canvasLocation" x="1237" y="29"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="59m-hE-4uH">
             <objects>
                 <navigationController id="Xka-lq-rjN" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="cm5-HF-njD">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -109,6 +148,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="arrow.forward" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

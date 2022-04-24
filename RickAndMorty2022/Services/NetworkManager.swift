@@ -18,7 +18,8 @@ class CharacterManager {
     
     private init() {}
     
-    func fetchData(from url: String?, with completion: @escaping(Result<RickAndMorty, NetworkError>) -> Void) {
+    func fetchData(from url: String?,
+                   with completion: @escaping(Result<RickAndMorty, NetworkError>) -> Void) {
         guard let url = URL(string: url ?? "") else {
             completion(.failure(.invalidURL))
             return }
@@ -31,7 +32,8 @@ class CharacterManager {
             }
             
             do {
-                let rickAndMorty = try JSONDecoder().decode(RickAndMorty.self, from: data)
+                let rickAndMorty = try JSONDecoder().decode(RickAndMorty.self,
+                                                            from: data)
                 DispatchQueue.main.async {
                     completion(.success(rickAndMorty))
                 }
@@ -49,14 +51,14 @@ class ImageManager {
     
     private init() {}
     
-    func fetchImage(from url: URL, with completion: @escaping(Data, URLResponse) -> Void) {
+    func fetchImage(from url: URL,
+                    with completion: @escaping(Data, URLResponse) -> Void) {
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, let response = response else {
-                print(error?.localizedDescription ?? "no descroption of error")
+                print(error?.localizedDescription ?? "no description of error")
                 return
             }
             
-            // Проверка для того чтоб изображения не скакали
             guard url == response.url else { return }
             
             DispatchQueue.main.async {
