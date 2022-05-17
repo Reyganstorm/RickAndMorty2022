@@ -11,13 +11,22 @@ class DetailViewController: UIViewController {
 
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var imageView: CharacterImageView!
+    @IBOutlet var containerView: UIView!
     @IBOutlet var descriptionLabel: UILabel!
     
     var character: Character!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         imageView.layer.cornerRadius = 25
+        
+        containerView.layer.cornerRadius = 25
+        containerView.layer.shadowColor = UIColor.darkGray.cgColor
+        containerView.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        containerView.layer.shadowRadius = 25.0
+        containerView.layer.shadowOpacity = 0.8
+        
         
         nameLabel.text = character.name
         imageView.fetchImage(from: character.image)
